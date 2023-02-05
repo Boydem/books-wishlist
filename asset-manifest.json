@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/books-wishlist.git/static/css/main.56c30d33.css",
+    "main.js": "/books-wishlist.git/static/js/main.6817f239.js",
+    "index.html": "/books-wishlist.git/index.html",
+    "main.56c30d33.css.map": "/books-wishlist.git/static/css/main.56c30d33.css.map",
+    "main.6817f239.js.map": "/books-wishlist.git/static/js/main.6817f239.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56c30d33.css",
+    "static/js/main.6817f239.js"
+  ]
+}
