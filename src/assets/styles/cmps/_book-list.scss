@@ -1,0 +1,48 @@
+.book-slider-container {
+    $book-preview-max-width: 300px;
+    $book-preview-padding: 40px;
+    $book-preview-max-width-padded: $book-preview-max-width + ($book-preview-padding * 2);
+
+    z-index: 0;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+
+    .book-list {
+        position: relative;
+        display: grid;
+        grid-auto-flow: column dense;
+        gap: 0px ($book-preview-padding * 2);
+        grid-template-columns: repeat(auto-fill, minmax($book-preview-max-width, 1fr));
+        background-color: #fff;
+        box-shadow: rgba(50, 50, 93, 0.123) 0px 6px 12px -2px, rgba(0, 0, 0, 0.144) 0px 3px 7px -3px;
+        padding: $book-preview-padding;
+        max-width: $book-preview-max-width-padded;
+        overflow: clip;
+        transition: all 0.3s;
+        // Only relevant for slider , the rest of styles sits in book-preview.scss
+        .book-preview {
+            width: $book-preview-max-width;
+            position: relative;
+            left: -($book-preview-max-width-padded * 0);
+            transition: all 0.3s;
+        }
+    }
+
+    .arrow-right,
+    .arrow-left {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+    }
+    .arrow-left {
+        left: -10%;
+    }
+    .arrow-right {
+        right: -10%;
+    }
+}

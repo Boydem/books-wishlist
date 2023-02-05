@@ -1,0 +1,46 @@
+.book-wishlist-index {
+    height: 100vh;
+    display: flex;
+    gap: 6rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.wishlist-list {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    .wishlist-item {
+        background-color: #fff;
+        padding: 6px 18px;
+        border-radius: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 40px;
+        gap: 20px;
+        font-size: 13px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: green;
+            width: 3px;
+            height: 100%;
+        }
+        &:not(:first-child) {
+            margin-top: 1em;
+        }
+        :last-child {
+            cursor: pointer;
+            transition: color 0.4s;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.book-preview {
+    display: flex;
+    flex-direction: column;
+    transition-duration: 200ms;
+    .title-checkbox-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        .title {
+            font-size: 1.25rem;
+        }
+
+        input[type='checkbox'] {
+        }
+    }
+    .details {
+        color: $base-text-color;
+        display: flex;
+        gap: 0.4em 0.8em;
+        flex-direction: column;
+        height: 100%;
+        .author {
+            font-weight: 600;
+            color: #568d8a;
+            border-top: 1px solid $gray-E;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+        .description {
+            color: $gray-B;
+            font-weight: 400;
+            margin-block: 0.5em;
+        }
+        .price {
+            font-weight: 600;
+            flex: 1;
+            .prefix {
+                font-weight: 400;
+            }
+        }
+    }
+}
