@@ -29,23 +29,39 @@ function getEmptyBook(title = '', price = 0, rating = null, author = '', isInWis
     }
 }
 
-function query() {
-    return storageService.query(BOOK_DB_KEY).then(books => books)
+async function query() {
+    try {
+        return await storageService.query(BOOK_DB_KEY).then(books => books)
+    } catch (err) {
+        throw err
+    }
 }
 
-function get(bookId) {
-    return storageService.get(BOOK_DB_KEY, bookId)
+async function get(bookId) {
+    try {
+        return await storageService.get(BOOK_DB_KEY, bookId)
+    } catch (err) {
+        throw err
+    }
 }
 
-function remove(bookId) {
-    return storageService.remove(BOOK_DB_KEY, bookId)
+async function remove(bookId) {
+    try {
+        return await storageService.remove(BOOK_DB_KEY, bookId)
+    } catch (err) {
+        throw err
+    }
 }
 
-function save(book) {
-    if (book.id) {
-        return storageService.put(BOOK_DB_KEY, book)
-    } else {
-        return storageService.post(BOOK_DB_KEY, book)
+async function save(book) {
+    try {
+        if (book.id) {
+            return await storageService.put(BOOK_DB_KEY, book)
+        } else {
+            return await storageService.post(BOOK_DB_KEY, book)
+        }
+    } catch (err) {
+        throw err
     }
 }
 

@@ -1,15 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { loadBooks, updateBook } from '../store/book/book.actions'
 import { BookSlider } from '../cmps/book-slider'
-import { WishList } from '../cmps/wish-list'
-import { bookService } from '../services/book.service'
 
-export function BookWishlist() {
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+export function BookIndex() {
     const books = useSelector(storeState => storeState.bookModule.books)
     const [leftPixelsToMove, setLeftPixelsToMove] = useState(0)
     const elSlider = useRef(null)
@@ -18,10 +13,6 @@ export function BookWishlist() {
     useEffect(() => {
         loadBooks()
     }, [])
-
-    function onAddToWishlist() {
-        console.log('Todo:add to wishlist')
-    }
 
     async function onToggleWishlist(book) {
         try {
@@ -46,16 +37,12 @@ export function BookWishlist() {
 
     if (!books || !books.length) return <div>Loading...</div>
     return (
-        <section className='book-wishlist-index'>
-            <BookSlider
-                ref={elSlider}
-                books={books}
-                onBookChange={onBookChange}
-                onToggleWishlist={onToggleWishlist}
-                onAddToWishlist={onAddToWishlist}
-                styles={-leftPixelsToMove}
-            />
-            <WishList />
-        </section>
+        <BookSlider
+            ref={elSlider}
+            books={books}
+            onBookChange={onBookChange}
+            onToggleWishlist={onToggleWishlist}
+            styles={-leftPixelsToMove}
+        />
     )
 }

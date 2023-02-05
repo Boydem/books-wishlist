@@ -2,7 +2,14 @@ export function NiceCheckbox({ book, name, value, handleChange }) {
     return (
         <div className='checkbox-wrapper-30'>
             <span className='checkbox'>
-                <input type='checkbox' name={name} id={name} onChange={() => handleChange(book)} value={value} />
+                <input
+                    type='checkbox'
+                    defaultChecked={book?.isInWishlist}
+                    name={name}
+                    id={name}
+                    onChange={() => handleChange(book)}
+                    value={value}
+                />
                 <svg>
                     <use xlinkHref='#checkbox-30' className='checkbox'></use>
                 </svg>

@@ -1,7 +1,6 @@
 import { NiceCheckbox } from './nice-checkbox'
 
 export function BookPreview({ styles = 0, book, onToggleWishlist }) {
-    console.log(book.isInWishlist)
     if (!book) return <div>Loading...</div>
     return (
         <article style={{ left: styles }} className='book-preview'>

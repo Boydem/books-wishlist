@@ -5,6 +5,7 @@ import { forwardRef } from 'react'
 
 export const BookSlider = forwardRef((props, ref) => {
     const { styles, books, onToggleWishlist, onBookChange } = props
+    console.log('books', books)
     return (
         <div className='book-slider-container'>
             <div onClick={() => onBookChange(-1)} className='arrow-left'>

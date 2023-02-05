@@ -1,14 +1,16 @@
 import './assets/styles/styles.scss'
 import { Route, Routes } from 'react-router-dom'
-import { BookWishlist } from './pages/book-wishlist'
+import { BookIndex } from './pages/book-index'
+import { WishList } from './cmps/wish-list'
 
 export function App() {
     return (
         <div className='app'>
-            <main className='main-layout'>
+            <main className='main-layout book-wishlist-index'>
                 <Routes>
-                    <Route path='/' element={<BookWishlist />} />
+                    <Route path='/' element={<BookIndex />} />
                 </Routes>
+                <WishList />
             </main>
         </div>
     )
