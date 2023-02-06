@@ -8,7 +8,7 @@ export function App() {
         <div className='app'>
             <main className='main-layout book-wishlist-index'>
                 <Routes>
-                    <Route path='/' element={<BookIndex />} />
+                    <Route path='/books-wishlist' element={<BookIndex />} />
                 </Routes>
                 <WishList />
             </main>
